@@ -107,10 +107,11 @@ function buildCharts(sample) {
 
     // 8. Create the trace for the bar chart. 
     var barData = [{
-      x: sampleValues,
+      x: sampleValues.slice(0,10).reverse(),
       y: yticks,
-      text: otuLabels,
-      type: "bar"
+      text: otuLabels.slice(0,10).reverse(),
+      type: "bar",
+      orientation: "h"
       }
     ];
 
@@ -118,8 +119,9 @@ function buildCharts(sample) {
     var barLayout = {
       title: "Best Bacteria Cultures Found",
       xaxis:{title:"Bacteria Count"},
-      yaxis:{title:"Bacteria ID"},
-      orientation: "h"
+      yaxis:{title:"Bacteria ID"}
+      
+      
     };
 
     // 10. Use Plotly to plot the data with the layout. 
@@ -133,7 +135,7 @@ function buildCharts(sample) {
       marker: {size: sampleValues, sizemode: "diameter", colorscale:"rainbow"},
       text: otuLabels,
       type: "scatter",
-      transforms: [{ type: "groupby", groups: OtuIds }],
+      transforms: [{ type: "groupby", groups: otuIds }],
         }
     ];
 
@@ -145,11 +147,11 @@ function buildCharts(sample) {
       hovermode: "closest",
       autosize: "true", 
       margin: {
-        l: 20,
-        r: 20,
+        l: 10,
+        r: 10,
         b: 110,
         t: 110,
-        pad: 5
+        pad: 10
       
       }
     };
