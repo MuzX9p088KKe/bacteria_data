@@ -124,8 +124,7 @@ function buildCharts(sample) {
       text: otuLabels,
       type: "scatter",
       transforms: [{ type: "groupby", groups: OtuIds }],
-    }
-
+        }
     ];
 
     // 2. Create the layout for the bubble chart.
@@ -145,7 +144,7 @@ function buildCharts(sample) {
       }
     };
     // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("scatter", bubbleData, bubbleLayout); 
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
 
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
@@ -154,8 +153,7 @@ function buildCharts(sample) {
       title: { text: "Washing Frequency" },
       type: "indicator",
       mode: "gauge+number"
-    }
-     
+      }
     ];
     
     // 5. Create the layout for the gauge chart.
