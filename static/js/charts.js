@@ -81,6 +81,10 @@ function buildCharts(sample) {
     var firstResult = filteredResults[0];
     console.log(firstResult);
 
+    // 5c. Create a variable that holds the first sample in washfr
+    var firstMetaData = washfr[0];
+    console.log(firstMetaData);
+
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otuIds = firstResult.otu_ids;
 
@@ -89,6 +93,10 @@ function buildCharts(sample) {
     var sampleValues = firstResult.sample_values;
 
     console.log(otuIds);
+
+    // 6b. Create a variable to hold washing frequency
+    var washFreq = firstMetaData.wfreq.toFixed(2);
+    console.log(washFreq);
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -151,7 +159,7 @@ function buildCharts(sample) {
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
       domain: { x: [0, 1], y: [0, 1] },
-      value: washfr,
+      value: washFreq,
       title: { text: "Washing Frequency" },
       type: "indicator",
       mode: "gauge+number"
