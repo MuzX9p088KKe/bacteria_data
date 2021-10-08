@@ -75,7 +75,7 @@ function buildCharts(sample) {
 
     // 4b. Create a variable that filters the metadata for the object with the desired sample number.
     var washfr = metadata.filter(sampleObj => sampleObj.id == sample);
-    console.log(metadataArray);
+    console.log(washfr);
   
     //  5. Create a variable that holds the first sample in the array.
     var firstResult = filteredResults[0];
@@ -105,6 +105,7 @@ function buildCharts(sample) {
       type: "bar"
       }
     ];
+
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Best Bacteria Cultures Found",
@@ -112,6 +113,7 @@ function buildCharts(sample) {
       yaxis:{title:"Bacteria ID"},
       orientation: "h"
     };
+
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
 
@@ -164,6 +166,6 @@ function buildCharts(sample) {
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge",gaugeData,gaugeLayout);
   });
-};
+}
 
 
