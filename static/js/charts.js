@@ -70,11 +70,11 @@ function buildCharts(sample) {
 
 
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-    var filteredResults = sampleData.filter(sampleNumber => sampleNumber.id == sample);
+    var filteredResults = sampleData.filter(sampleObj => sampleObj.id == sample);
     console.log(filteredResults);
 
     // 4b. Create a variable that filters the metadata for the object with the desired sample number.
-    var washfr = metadata.filter(sampleNumber => sampleNumber.id == sample);
+    var washfr = metadata.filter(sampleObj => sampleObj.id == sample);
     console.log(metadataArray);
   
     //  5. Create a variable that holds the first sample in the array.
