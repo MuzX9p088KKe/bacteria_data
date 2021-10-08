@@ -108,7 +108,7 @@ function buildCharts(sample) {
     // 8. Create the trace for the bar chart. 
     var barData = [{
       x: sampleValues,
-      y: otuIds,
+      y: yticks,
       text: otuLabels,
       type: "bar"
       }
@@ -128,9 +128,9 @@ function buildCharts(sample) {
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
       x: otuIds,
-      y: sampleValues,
+      y: yticks,
       mode: "markers",
-      marker: {size: sampleValues, sizeref: 0.06, sizemode: "area"},
+      marker: {size: sampleValues, sizemode: "diameter", colorscale:"rainbow"},
       text: otuLabels,
       type: "scatter",
       transforms: [{ type: "groupby", groups: OtuIds }],
